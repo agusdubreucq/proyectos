@@ -2,30 +2,34 @@ from time import strftime, sleep
 from pygame import mixer
 from tkinter import messagebox
 
-def obtener_time(combobox1, combobox2, combobox3, txt_hora_actual, alarma, cantidad):
+class funcion():
+    def __init__(self,):
+        pass
 
-    x_hs = combobox1.get()
-    x_min = combobox2.get()
-    x_seg = combobox3.get()
+    def obtener_time(self,combobox1, combobox2, combobox3, txt_hora_actual, alarma, cantidad):
 
-    hs = strftime('%H')
-    min = strftime('%M')
-    seg = strftime('%S')
+        x_hs = combobox1.get()
+        x_min = combobox2.get()
+        x_seg = combobox3.get()
 
-    hora_actual = (hs + " : "+ min+" : "+seg)
-    txt_hora_actual.config(text=hora_actual)
+        hs = strftime('%H')
+        min = strftime('%M')
+        seg = strftime('%S')
 
-    hora_alarma = x_hs + " : " + x_min + " : " + x_seg
-    alarma['text'] = hora_alarma
-    
-    
+        hora_actual = (hs + " : "+ min+" : "+seg)
+        txt_hora_actual.config(text=hora_actual)
 
-    if int(hs)== int(x_hs):
-        if int(min)== int(x_min):
-            if int(seg)== int(x_seg):
-                mixer.music.load("audios/blood_on_the_dance_floor.mp3")
-                mixer.music.play(loops = int(cantidad.get()))
-                messagebox.showinfo(message=hora_alarma, title="Alarma")
-                sleep(1)
-    
-    txt_hora_actual.after(100, obtener_time)
+        hora_alarma = x_hs + " : " + x_min + " : " + x_seg
+        alarma['text'] = hora_alarma
+        
+        
+
+        if int(hs)== int(x_hs):
+            if int(min)== int(x_min):
+                if int(seg)== int(x_seg):
+                    mixer.music.load("audios/blood_on_the_dance_floor.mp3")
+                    mixer.music.play(loops = int(cantidad.get()))
+                    messagebox.showinfo(message=hora_alarma, title="Alarma")
+                    sleep(1)
+        
+        txt_hora_actual.after(100, self.obtener_time)

@@ -53,6 +53,12 @@ class Panel():
         txt_hora_actual = Label(ventana, fg=color_hs, bg="#000", font=('Arial', 20))
         txt_hora_actual.grid(columnspan=3, row=0, sticky="nsew", ipadx=5, ipady=20)
 
-        obtener_time(combobox1= combobox1,combobox2= combobox2, combobox3= combobox3\
-        , txt_hora_actual= txt_hora_actual, alarma= alarma, cantidad= cantidad)
+        apl = funcion()
+
+        try: 
+            apl.obtener_time(combobox1= combobox1,combobox2= combobox2, combobox3= combobox3, txt_hora_actual= txt_hora_actual, alarma= alarma, cantidad= cantidad)
+        except:
+            print("no se puede")
+
+        
 
