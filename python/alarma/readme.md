@@ -1,0 +1,1 @@
+para instalar pygame usar el comando: py -m pip install -U pygame --user

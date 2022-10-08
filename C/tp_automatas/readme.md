@@ -1,0 +1,1 @@
+Este es un trabajo practico de sintaxis y semantica de los lenguajes en el cual debiamos crear un programa que reconozca si una palabra ingresada por teclado pertenecia a un lenguaje, el cual tenia asociado un automata finito deterministico(AFD)
